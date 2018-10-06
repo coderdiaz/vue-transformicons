@@ -224,7 +224,7 @@ Provides with a Loader icon.
 
 #### Examples
 ```html
-<loader-icon</loader-icon>
+<loader-icon></loader-icon>
 ```
 
 

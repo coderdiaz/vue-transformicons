@@ -1,19 +1,4 @@
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
-var BaseButton = {
+const BaseButton = {
   name: 'BaseButton',
   props: {
     animation: {
@@ -33,42 +18,51 @@ var BaseButton = {
       default: {}
     }
   },
-  data: function data() {
+
+  data() {
     return {
       currentActive: false
     };
   },
-  mounted: function mounted() {
+
+  mounted() {
     this.currentActive = this.active;
   },
-  computed: {
-    currentClasses: function currentClasses() {
-      var _ref;
 
-      var currentAnimation = this.animations[this.animation].join(' ');
-      return _ref = {
-        tcon: true
-      }, _defineProperty(_ref, "".concat(currentAnimation), true), _defineProperty(_ref, 'tcon-transform', this.currentActive), _ref;
+  computed: {
+    currentClasses() {
+      const currentAnimation = this.animations[this.animation].join(' ');
+      return {
+        tcon: true,
+        [`${currentAnimation}`]: true,
+        'tcon-transform': this.currentActive
+      };
     }
+
   },
-  render: function render() {
-    var h = arguments[0];
+
+  render() {
+    const h = arguments[0];
     return h("button", {
       attrs: {
-        "aria-label": this.ariaLabel,
-        onclick: this.toggleStatus
+        "aria-label": this.ariaLabel
       },
-      "class": this.currentClasses
+      "class": this.currentClasses,
+      on: {
+        "click": this.toggleStatus
+      }
     }, [this.$slots.default]);
   },
+
   methods: {
-    toggleStatus: function toggleStatus(e) {
+    toggleStatus(e) {
       e.preventDefault();
       this.currentActive = !this.currentActive;
     }
+
   }
 };
-var IconMixin = {
+const IconMixin = {
   props: {
     animation: {
       type: String,
@@ -83,7 +77,8 @@ var IconMixin = {
 
 var MenuIcon = {
   mixins: [IconMixin],
-  data: function data() {
+
+  data() {
     return {
       defaultAnimation: 'butterfly',
       animations: {
@@ -96,11 +91,13 @@ var MenuIcon = {
       }
     };
   },
-  mounted: function mounted() {
+
+  mounted() {
     this.defaultAnimation = this.animation ? this.animation : this.defaultAnimation;
   },
-  render: function render() {
-    var h = arguments[0];
+
+  render() {
+    const h = arguments[0];
     return h(BaseButton, {
       attrs: {
         ariaLabel: "toggle menu",
@@ -117,14 +114,16 @@ var MenuIcon = {
       "class": "tcon-visuallyhidden"
     }, ["toggle menu"])]);
   },
+
   components: {
-    BaseButton: BaseButton
+    BaseButton
   }
 };
 
 var GridIcon = {
   mixins: [IconMixin],
-  data: function data() {
+
+  data() {
     return {
       defaultAnimation: 'rearrange',
       animations: {
@@ -133,11 +132,13 @@ var GridIcon = {
       }
     };
   },
-  mounted: function mounted() {
+
+  mounted() {
     this.defaultAnimation = this.animation ? this.animation : this.defaultAnimation;
   },
-  render: function render() {
-    var h = arguments[0];
+
+  render() {
+    const h = arguments[0];
     return h(BaseButton, {
       attrs: {
         ariaLabel: "toggle grid",
@@ -154,14 +155,16 @@ var GridIcon = {
       "class": "tcon-visuallyhidden"
     }, ["toggle grid"])]);
   },
+
   components: {
-    BaseButton: BaseButton
+    BaseButton
   }
 };
 
 var AddIcon = {
   mixins: [IconMixin],
-  data: function data() {
+
+  data() {
     return {
       defaultAnimation: 'minus',
       animations: {
@@ -170,11 +173,13 @@ var AddIcon = {
       }
     };
   },
-  mounted: function mounted() {
+
+  mounted() {
     this.defaultAnimation = this.animation ? this.animation : this.defaultAnimation;
   },
-  render: function render() {
-    var h = arguments[0];
+
+  render() {
+    const h = arguments[0];
     return h(BaseButton, {
       attrs: {
         ariaLabel: "add item",
@@ -186,14 +191,16 @@ var AddIcon = {
       "class": "tcon-visuallyhidden"
     }, ["add item"])]);
   },
+
   components: {
-    BaseButton: BaseButton
+    BaseButton
   }
 };
 
 var MailIcon = {
   mixins: [IconMixin],
-  data: function data() {
+
+  data() {
     return {
       defaultAnimation: 'mail',
       animations: {
@@ -201,11 +208,13 @@ var MailIcon = {
       }
     };
   },
-  mounted: function mounted() {
+
+  mounted() {
     this.defaultAnimation = this.animation ? this.animation : this.defaultAnimation;
   },
-  render: function render() {
-    var h = arguments[0];
+
+  render() {
+    const h = arguments[0];
     return h(BaseButton, {
       attrs: {
         ariaLabel: "open mailbox",
@@ -222,14 +231,15 @@ var MailIcon = {
       "class": "tcon-visuallyhidden"
     }, ["open mailbox"])]);
   },
+
   components: {
-    BaseButton: BaseButton
+    BaseButton
   }
 };
 
 var ScrollIcon = {
-  render: function render() {
-    var h = arguments[0];
+  render() {
+    const h = arguments[0];
     return h("svg", {
       "class": "tcon-svgchevron",
       attrs: {
@@ -254,11 +264,13 @@ var ScrollIcon = {
       }
     })]);
   }
+
 };
 
 var FormIcon = {
   mixins: [IconMixin],
-  data: function data() {
+
+  data() {
     return {
       defaultAnimation: 'search',
       animations: {
@@ -266,11 +278,13 @@ var FormIcon = {
       }
     };
   },
-  mounted: function mounted() {
+
+  mounted() {
     this.defaultAnimation = this.animation ? this.animation : this.defaultAnimation;
   },
-  render: function render() {
-    var h = arguments[0];
+
+  render() {
+    const h = arguments[0];
     return h(BaseButton, {
       attrs: {
         ariaLabel: "toggle search",
@@ -287,14 +301,16 @@ var FormIcon = {
       "class": "tcon-visuallyhidden"
     }, ["toggle search"])]);
   },
+
   components: {
-    BaseButton: BaseButton
+    BaseButton
   }
 };
 
 var VideoIcon = {
   mixins: [IconMixin],
-  data: function data() {
+
+  data() {
     return {
       defaultAnimation: 'play',
       animations: {
@@ -302,11 +318,13 @@ var VideoIcon = {
       }
     };
   },
-  mounted: function mounted() {
+
+  mounted() {
     this.defaultAnimation = this.animation ? this.animation : this.defaultAnimation;
   },
-  render: function render() {
-    var h = arguments[0];
+
+  render() {
+    const h = arguments[0];
     return h(BaseButton, {
       attrs: {
         ariaLabel: "play video",
@@ -318,14 +336,15 @@ var VideoIcon = {
       "class": "tcon-visuallyhidden"
     }, ["play video"])]);
   },
+
   components: {
-    BaseButton: BaseButton
+    BaseButton
   }
 };
 
 var LoaderIcon = {
-  render: function render() {
-    var h = arguments[0];
+  render() {
+    const h = arguments[0];
     return h("span", {
       attrs: {
         "aria-label": "loading"
@@ -335,11 +354,13 @@ var LoaderIcon = {
       "class": "tcon-visuallyhidden"
     }, ["loading"])]);
   }
+
 };
 
 var RemoveIcon = {
   mixins: [IconMixin],
-  data: function data() {
+
+  data() {
     return {
       defaultAnimation: 'check',
       animations: {
@@ -351,11 +372,13 @@ var RemoveIcon = {
       }
     };
   },
-  mounted: function mounted() {
+
+  mounted() {
     this.defaultAnimation = this.animation ? this.animation : this.defaultAnimation;
   },
-  render: function render() {
-    var h = arguments[0];
+
+  render() {
+    const h = arguments[0];
     return h(BaseButton, {
       attrs: {
         ariaLabel: "remove item",
@@ -367,23 +390,22 @@ var RemoveIcon = {
       "class": "tcon-visuallyhidden"
     }, ["remove item"])]);
   },
+
   components: {
-    BaseButton: BaseButton
+    BaseButton
   }
 };
 
-var components = [MenuIcon, GridIcon, AddIcon, MailIcon, ScrollIcon, FormIcon, VideoIcon, LoaderIcon, RemoveIcon];
+const components = [MenuIcon, GridIcon, AddIcon, MailIcon, ScrollIcon, FormIcon, VideoIcon, LoaderIcon, RemoveIcon];
 function install(Vue) {
   if (install.installed) return;
   install.installed = true;
-  components.map(function (component) {
-    return Vue.component(component.name, component);
-  });
+  components.map(component => Vue.component(component.name, component));
 }
-var plugin = {
-  install: install
+const plugin = {
+  install
 };
-var GlobalVue = null;
+let GlobalVue = null;
 
 if (typeof window !== 'undefined') {
   GlobalVue = window.Vue;

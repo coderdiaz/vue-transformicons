@@ -378,9 +378,25 @@ var RemoveIcon = {
 
 var components = [MenuIcon, GridIcon, AddIcon, MailIcon, ScrollIcon, FormIcon, VideoIcon, LoaderIcon, RemoveIcon];
 function install(Vue) {
+  if (install.installed) return;
+  install.installed = true;
   components.map(function (component) {
     return Vue.component(component.name, component);
   });
+}
+var plugin = {
+  install: install
+};
+var GlobalVue = null;
+
+if (typeof window !== 'undefined') {
+  GlobalVue = window.Vue;
+} else if (typeof global !== 'undefined') {
+  GlobalVue = global.Vue;
+}
+
+if (GlobalVue) {
+  GlobalVue.use(plugin);
 }
 
 exports.install = install;
@@ -393,3 +409,4 @@ exports.FormIcon = FormIcon;
 exports.VideoIcon = VideoIcon;
 exports.LoaderIcon = LoaderIcon;
 exports.RemoveIcon = RemoveIcon;
+exports.default = plugin;

@@ -1,0 +1,44 @@
+{
+  "name": "vue-transformicons",
+  "version": "0.1.0",
+  "description": "Transformicons for Vue",
+  "author": {
+    "name": "Javier Diaz",
+    "email": "hello@coderdiaz.me",
+    "url": "https://github.com/coderdiaz"
+  },
+  "poi": {
+    "entry": "example/index.js",
+    "dist": "example/dist"
+  },
+  "main": "dist/vue-transformicons.cjs.js",
+  "module": "dist/vue-transformicons.es.js",
+  "cdn": "dist/vue-transformicons.min.js",
+  "unpkg": "dist/vue-transformicons.min.js",
+  "jsdelivr": "dist/vue-transformicons.min.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "bili packages/index.js --format umd,cjs,es,umd-min --exports named --module-name VueTransformicons --plugin vue",
+    "serve": "poi",
+    "lint": "eslint --ext .js,.vue packages",
+    "test": "echo fine"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "bili": "^3.1.2",
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-vue": "^2.0.2",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-vue": "^4.7.1",
+    "poi": "^9.1.2",
+    "rollup-plugin-vue": "^4.3.2"
+  },
+  "dependencies": {
+    "vue": "^2.5.17"
+  }
+}

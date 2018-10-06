@@ -1,6 +1,7 @@
 import { BaseButton, IconMixin } from './BaseButton';
 
 export default {
+  name: 'GridIcon',
   mixins: [IconMixin],
   data() {
     return {

@@ -1,6 +1,7 @@
 import { BaseButton, IconMixin } from './BaseButton';
 
 export default {
+  name: 'VideoIcon',
   mixins: [IconMixin],
   data() {
     return {

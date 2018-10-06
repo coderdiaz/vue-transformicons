@@ -1,6 +1,7 @@
 import { BaseButton, IconMixin } from './BaseButton';
 
 export default {
+  name: 'MenuIcon',
   mixins: [IconMixin],
   data() {
     return {

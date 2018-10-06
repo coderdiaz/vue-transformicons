@@ -1,4 +1,5 @@
 export default {
+  name: 'ScrollIcon',
   render() {
     return <svg class="tcon-svgchevron" version="1.1" viewBox="0 0 30 36" xmlns="http://www.w3.org/2000/svg">
       <path class="a3" d="M0,0l15,16L30,0" />

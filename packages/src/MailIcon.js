@@ -1,6 +1,7 @@
 import { BaseButton, IconMixin } from './BaseButton';
 
 export default {
+  name: 'MailIcon',
   mixins: [IconMixin],
   data() {
     return {

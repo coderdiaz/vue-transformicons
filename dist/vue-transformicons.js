@@ -82,6 +82,7 @@
   };
 
   var MenuIcon = {
+    name: 'MenuIcon',
     mixins: [IconMixin],
 
     data() {
@@ -127,6 +128,7 @@
   };
 
   var GridIcon = {
+    name: 'GridIcon',
     mixins: [IconMixin],
 
     data() {
@@ -168,6 +170,7 @@
   };
 
   var AddIcon = {
+    name: 'AddIcon',
     mixins: [IconMixin],
 
     data() {
@@ -204,6 +207,7 @@
   };
 
   var MailIcon = {
+    name: 'MailIcon',
     mixins: [IconMixin],
 
     data() {
@@ -244,6 +248,8 @@
   };
 
   var ScrollIcon = {
+    name: 'ScrollIcon',
+
     render() {
       const h = arguments[0];
       return h("svg", {
@@ -274,6 +280,7 @@
   };
 
   var FormIcon = {
+    name: 'FormIcon',
     mixins: [IconMixin],
 
     data() {
@@ -314,6 +321,7 @@
   };
 
   var VideoIcon = {
+    name: 'VideoIcon',
     mixins: [IconMixin],
 
     data() {
@@ -349,6 +357,8 @@
   };
 
   var LoaderIcon = {
+    name: 'LoaderIcon',
+
     render() {
       const h = arguments[0];
       return h("span", {
@@ -364,6 +374,7 @@
   };
 
   var RemoveIcon = {
+    name: 'RemoveIcon',
     mixins: [IconMixin],
 
     data() {
@@ -406,7 +417,9 @@
   function install(Vue) {
     if (install.installed) return;
     install.installed = true;
-    components.map(component => Vue.component(component.name, component));
+    components.forEach(component => {
+      Vue.component(component.name, component);
+    });
   }
   const plugin = {
     install

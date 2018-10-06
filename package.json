@@ -16,6 +16,7 @@
   "cdn": "dist/vue-transformicons.min.js",
   "unpkg": "dist/vue-transformicons.min.js",
   "jsdelivr": "dist/vue-transformicons.min.js",
+  "style": "dist/vue-transformicons.min.css",
   "files": [
     "dist"
   ],

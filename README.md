@@ -35,7 +35,7 @@ $ yarn add vue-transformicons
 
 ## Usage
 ### Local registration
-```js
+```html
 <template>
   <div id="#app">
     <menu-icon></menu-icon>
@@ -64,8 +64,10 @@ https://unpkg.com/vue-transformicons@latest/dist/vue-transformicons.min.css
 https://unpkg.com/vue-transformicons@latest/dist/vue-transformicons.min.js
 ```
 
-## Documentation
+## Documentation
+```
 More docs is comming
+```
 
 ## Contributions
 All contributions are welcome send your PR and Issues.

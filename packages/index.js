@@ -24,7 +24,9 @@ const components = [
 export function install(Vue) {
   if (install.installed) return;
   install.installed = true;
-  components.map(component => Vue.component(component.name, component));
+  components.forEach((component) => {
+    Vue.component(component.name, component);
+  });
 }
 
 const plugin = {

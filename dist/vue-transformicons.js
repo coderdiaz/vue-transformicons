@@ -58,11 +58,14 @@
       }
     },
     render: function render() {
-      return React.createElement("button", {
-        "aria-label": this.ariaLabel,
-        class: this.currentClasses,
-        onclick: this.toggleStatus
-      }, this.$slots.default);
+      var h = arguments[0];
+      return h("button", {
+        attrs: {
+          "aria-label": this.ariaLabel,
+          onclick: this.toggleStatus
+        },
+        "class": this.currentClasses
+      }, [this.$slots.default]);
     },
     methods: {
       toggleStatus: function toggleStatus(e) {
@@ -103,17 +106,22 @@
       this.defaultAnimation = this.animation ? this.animation : this.defaultAnimation;
     },
     render: function render() {
-      return React.createElement(BaseButton, {
-        ariaLabel: "toggle menu",
-        animation: this.defaultAnimation,
-        animations: this.animations,
-        active: this.active
-      }, React.createElement("span", {
-        "aria-hidden": "true",
-        class: "tcon-menu__lines"
-      }), React.createElement("span", {
-        class: "tcon-visuallyhidden"
-      }, "toggle menu"));
+      var h = arguments[0];
+      return h(BaseButton, {
+        attrs: {
+          ariaLabel: "toggle menu",
+          animation: this.defaultAnimation,
+          animations: this.animations,
+          active: this.active
+        }
+      }, [h("span", {
+        attrs: {
+          "aria-hidden": "true"
+        },
+        "class": "tcon-menu__lines"
+      }), h("span", {
+        "class": "tcon-visuallyhidden"
+      }, ["toggle menu"])]);
     },
     components: {
       BaseButton: BaseButton
@@ -135,17 +143,22 @@
       this.defaultAnimation = this.animation ? this.animation : this.defaultAnimation;
     },
     render: function render() {
-      return React.createElement(BaseButton, {
-        ariaLabel: "toggle grid",
-        animation: this.defaultAnimation,
-        animations: this.animations,
-        active: this.active
-      }, React.createElement("span", {
-        "aria-hidden": "true",
-        class: "tcon-grid__item"
-      }), React.createElement("span", {
-        class: "tcon-visuallyhidden"
-      }, "toggle grid"));
+      var h = arguments[0];
+      return h(BaseButton, {
+        attrs: {
+          ariaLabel: "toggle grid",
+          animation: this.defaultAnimation,
+          animations: this.animations,
+          active: this.active
+        }
+      }, [h("span", {
+        attrs: {
+          "aria-hidden": "true"
+        },
+        "class": "tcon-grid__item"
+      }), h("span", {
+        "class": "tcon-visuallyhidden"
+      }, ["toggle grid"])]);
     },
     components: {
       BaseButton: BaseButton
@@ -167,14 +180,17 @@
       this.defaultAnimation = this.animation ? this.animation : this.defaultAnimation;
     },
     render: function render() {
-      return React.createElement(BaseButton, {
-        ariaLabel: "add item",
-        animation: this.defaultAnimation,
-        animations: this.animations,
-        active: this.active
-      }, React.createElement("span", {
-        class: "tcon-visuallyhidden"
-      }, "add item"));
+      var h = arguments[0];
+      return h(BaseButton, {
+        attrs: {
+          ariaLabel: "add item",
+          animation: this.defaultAnimation,
+          animations: this.animations,
+          active: this.active
+        }
+      }, [h("span", {
+        "class": "tcon-visuallyhidden"
+      }, ["add item"])]);
     },
     components: {
       BaseButton: BaseButton
@@ -195,17 +211,22 @@
       this.defaultAnimation = this.animation ? this.animation : this.defaultAnimation;
     },
     render: function render() {
-      return React.createElement(BaseButton, {
-        ariaLabel: "open mailbox",
-        animation: this.defaultAnimation,
-        animations: this.animations,
-        active: this.active
-      }, React.createElement("span", {
-        "aria-hidden": "true",
-        class: "tcon-mail--envelope__flap"
-      }), React.createElement("span", {
-        class: "tcon-visuallyhidden"
-      }, "open mailbox"));
+      var h = arguments[0];
+      return h(BaseButton, {
+        attrs: {
+          ariaLabel: "open mailbox",
+          animation: this.defaultAnimation,
+          animations: this.animations,
+          active: this.active
+        }
+      }, [h("span", {
+        attrs: {
+          "aria-hidden": "true"
+        },
+        "class": "tcon-mail--envelope__flap"
+      }), h("span", {
+        "class": "tcon-visuallyhidden"
+      }, ["open mailbox"])]);
     },
     components: {
       BaseButton: BaseButton
@@ -214,21 +235,30 @@
 
   var ScrollIcon = {
     render: function render() {
-      return React.createElement("svg", {
-        class: "tcon-svgchevron",
-        version: "1.1",
-        viewBox: "0 0 30 36",
-        xmlns: "http://www.w3.org/2000/svg"
-      }, React.createElement("path", {
-        class: "a3",
-        d: "M0,0l15,16L30,0"
-      }), React.createElement("path", {
-        class: "a2",
-        d: "M0,10l15,16l15-16"
-      }), React.createElement("path", {
-        class: "a1",
-        d: "M0,20l15,16l15-16"
-      }));
+      var h = arguments[0];
+      return h("svg", {
+        "class": "tcon-svgchevron",
+        attrs: {
+          version: "1.1",
+          viewBox: "0 0 30 36",
+          xmlns: "http://www.w3.org/2000/svg"
+        }
+      }, [h("path", {
+        "class": "a3",
+        attrs: {
+          d: "M0,0l15,16L30,0"
+        }
+      }), h("path", {
+        "class": "a2",
+        attrs: {
+          d: "M0,10l15,16l15-16"
+        }
+      }), h("path", {
+        "class": "a1",
+        attrs: {
+          d: "M0,20l15,16l15-16"
+        }
+      })]);
     }
   };
 
@@ -246,17 +276,22 @@
       this.defaultAnimation = this.animation ? this.animation : this.defaultAnimation;
     },
     render: function render() {
-      return React.createElement(BaseButton, {
-        ariaLabel: "toggle search",
-        animation: this.defaultAnimation,
-        animations: this.animations,
-        active: this.active
-      }, React.createElement("span", {
-        "aria-hidden": "true",
-        class: "tcon-search__item"
-      }), React.createElement("span", {
-        class: "tcon-visuallyhidden"
-      }, "toggle search"));
+      var h = arguments[0];
+      return h(BaseButton, {
+        attrs: {
+          ariaLabel: "toggle search",
+          animation: this.defaultAnimation,
+          animations: this.animations,
+          active: this.active
+        }
+      }, [h("span", {
+        attrs: {
+          "aria-hidden": "true"
+        },
+        "class": "tcon-search__item"
+      }), h("span", {
+        "class": "tcon-visuallyhidden"
+      }, ["toggle search"])]);
     },
     components: {
       BaseButton: BaseButton
@@ -277,14 +312,17 @@
       this.defaultAnimation = this.animation ? this.animation : this.defaultAnimation;
     },
     render: function render() {
-      return React.createElement(BaseButton, {
-        ariaLabel: "play video",
-        animation: this.defaultAnimation,
-        animations: this.animations,
-        active: this.active
-      }, React.createElement("span", {
-        class: "tcon-visuallyhidden"
-      }, "play video"));
+      var h = arguments[0];
+      return h(BaseButton, {
+        attrs: {
+          ariaLabel: "play video",
+          animation: this.defaultAnimation,
+          animations: this.animations,
+          active: this.active
+        }
+      }, [h("span", {
+        "class": "tcon-visuallyhidden"
+      }, ["play video"])]);
     },
     components: {
       BaseButton: BaseButton
@@ -293,12 +331,15 @@
 
   var LoaderIcon = {
     render: function render() {
-      return React.createElement("span", {
-        "aria-label": "loading",
-        class: "tcon-loader--spinner360"
-      }, React.createElement("span", {
-        class: "tcon-visuallyhidden"
-      }, "loading"));
+      var h = arguments[0];
+      return h("span", {
+        attrs: {
+          "aria-label": "loading"
+        },
+        "class": "tcon-loader--spinner360"
+      }, [h("span", {
+        "class": "tcon-visuallyhidden"
+      }, ["loading"])]);
     }
   };
 
@@ -320,14 +361,17 @@
       this.defaultAnimation = this.animation ? this.animation : this.defaultAnimation;
     },
     render: function render() {
-      return React.createElement(BaseButton, {
-        ariaLabel: "remove item",
-        animation: this.defaultAnimation,
-        animations: this.animations,
-        active: this.active
-      }, React.createElement("span", {
-        class: "tcon-visuallyhidden"
-      }, "remove item"));
+      var h = arguments[0];
+      return h(BaseButton, {
+        attrs: {
+          ariaLabel: "remove item",
+          animation: this.defaultAnimation,
+          animations: this.animations,
+          active: this.active
+        }
+      }, [h("span", {
+        "class": "tcon-visuallyhidden"
+      }, ["remove item"])]);
     },
     components: {
       BaseButton: BaseButton

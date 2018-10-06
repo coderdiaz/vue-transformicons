@@ -53,7 +53,7 @@ export default {
 
 ### Global registration
 ```js
-import VueTransformicons from 'vue-transformicons;
+import VueTransformicons from 'vue-transformicons';
 Vue.use(Transformicons);
 ```
 
@@ -64,10 +64,169 @@ https://unpkg.com/vue-transformicons@latest/dist/vue-transformicons.min.css
 https://unpkg.com/vue-transformicons@latest/dist/vue-transformicons.min.js
 ```
 
-## Documentation
+## Transformicons Components
+- [Menu Icons](#menu-icons)
+- [Grid Icons](#grid-icons)
+- [Add Icons](#add-icons)
+- [Remove Icons](#remove-icons)
+- [Contact Icons](#contact-icons)
+- [Form Icons](#form-icons)
+- [Video Icons](#video-icons)
+- [Scroll Icon](#scroll-icon)
+- [Loader Icon](#loader-icon)
+
+## Menu Icons
+Provides with Menu icons.
+
+#### Parameters:
+- `animation` - string, optional - Sets the menu animation type. In case this parameter is
+  not provided, it will default to `butterfly`. Values available:
+  - `butterfly`
+  - `minus`
+  - `x-cross`
+  - `arrow-up`
+  - `arrow-360-left`
+  - `arrow-left`
+- `active` - boolean, optional - Sets initial state for the button. Defaults to
+  `false`.
+
+#### Examples
+```html
+<menu-icon></menu-icon>
+<menu-icon animation="minus"></menu-icon>
+<menu-icon animation="x-cross"></menu-icon>
+<menu-icon animation="arrow-up"></menu-icon>
+<menu-icon animation="arrow-left"></menu-icon>
+<menu-icon animation="arrow-left" :active="true"></menu-icon>
 ```
-More docs is comming
+
+## Grid Icons
+Provides with Grid icons.
+
+#### Parameters:
+- `animation` - string, optional - Sets the menu animation type. In case this parameter is
+  not provided, it will default to `minus`. Values available:
+  - `minus`
+  - `check`
+- `active` - boolean, optional - Sets initial state for the button. Defaults to
+  `false`.
+
+#### Examples
+```html
+<grid-icon></grid-icon>
+<grid-icon animation="rearrange"></grid-icon>
+<grid-icon animation="collapse"></grid-icon>
+<grid-icon animation="collapse" :active="true"></grid-icon>
 ```
+
+## Add Icons
+Provides with Add icons.
+
+#### Parameters:
+- `animation` - string, optional - Sets the menu animation type. In case this parameter is
+  not provided, it will default to `minus`. Values available:
+  - `minus`
+  - `check`
+- `active` - boolean, optional - Sets initial state for the button. Defaults to
+  `false`.
+
+## Examples
+```html
+<add-icon></add-icon>
+<add-icon animation="minus"></add-icon>
+<add-icon animation="check"></add-icon>
+<add-icon animation="minus" :active="true">
+```
+
+## Remove Icons
+Provides with Remove icons.
+
+#### Parameters
+- `animation` - string, optional - Sets the menu animation type. In case this parameter is
+  not provided, it will default to `check`. Values available:
+  - `check`
+  - `chevron-left`
+  - `chevron-right`
+  - `chevron-down`
+  - `chevron-up`
+- `active` - boolean, optional - Sets initial state for the button. Defaults to
+  `false`.
+
+#### Examples
+```html
+<remove-icon></remove-icon>
+<remove-icon animation="check"></remove-icon>
+<remove-icon animation="chevron-left"></remove-icon>
+<remove-icon animation="chevron-right"></remove-icon>
+<remove-icon animation="chevron-down"></remove-icon>
+<remove-icon animation="chevron-up"></remove-icon>
+<remove-icon animation="check" :active="true"></remove-icon>
+```
+
+## Contact Icons
+Provides with Contact icons.
+
+#### Parameters:
+- `animation` - string, optional - So far, the only available animation
+  is `email`.
+- `active` - boolean, optional - Sets initial state for the button. Defaults to
+  `false`.
+
+#### Examples
+```html
+<contact-icon></contact-icon>
+<contact-icon :active="true"></contact-icon>
+<contact-icon animation="email" ></contact-icon>
+```
+
+## Form Icons
+Provides with Form icons.
+
+#### Parameters:
+- `animation` - string, optional - So far, the only available animation
+  is `search`.
+- `active` - boolean, optional - Sets initial state for the button. Defaults to
+  `false`.
+
+#### Examples
+```html
+<form-icon></form-icon>
+<form-icon :active="true"></form-icon>
+<form-icon animation="search"></form-icon>
+```
+
+## Video Icons
+Provides with Video icons.
+
+#### Parameters:
+- `animation` - string, optional - So far, the only available animation
+  is `play`.
+- `active` - boolean, optional - Sets initial state for the button. Defaults to
+  `false`.
+
+#### Examples
+```html
+<video-icon></video-icon>
+<video-icon :active="true"></video-icon>
+<video-icon animation="play"></video-icon>
+```
+
+## Scroll Icon
+Provides with a scroll icon.
+
+#### Examples
+```html
+<scroll-icon></scroll-icon>
+```
+
+## Loader Icon
+Provides with a Loader icon.
+
+#### Examples
+```html
+<loader-icon</loader-icon>
+```
+
 
 ## Contributions
 All contributions are welcome send your PR and Issues.

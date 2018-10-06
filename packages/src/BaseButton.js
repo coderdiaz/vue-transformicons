@@ -40,7 +40,7 @@ export const BaseButton = {
     return <button
       aria-label={this.ariaLabel}
       class={this.currentClasses}
-      onclick={this.toggleStatus}>
+      onClick={this.toggleStatus}>
       {this.$slots.default}
     </button>;
   },

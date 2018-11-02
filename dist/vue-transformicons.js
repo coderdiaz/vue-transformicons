@@ -66,6 +66,13 @@
         this.currentActive = !this.currentActive;
       }
 
+    },
+    watch: {
+      active: {
+        handler: function setActiveValue(val) {
+          this.currentActive = val;
+        }
+      }
     }
   };
   const IconMixin = {

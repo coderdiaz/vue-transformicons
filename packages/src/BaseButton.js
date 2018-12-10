@@ -50,6 +50,13 @@ export const BaseButton = {
       this.currentActive = !this.currentActive;
     },
   },
+  watch: {
+    active: {
+      handler(val) {
+        this.currentActive = val;
+      },
+    },
+  },
 };
 
 export const IconMixin = {

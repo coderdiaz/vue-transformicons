@@ -1,4 +1,5 @@
-import { BaseButton, IconMixin } from './BaseButton';
+import BaseButton from './BaseButton.vue';
+import IconMixin from './IconMixin.vue';
 
 export default {
   name: 'VideoIcon',

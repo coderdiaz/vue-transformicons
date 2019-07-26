@@ -16,9 +16,10 @@ export default {
     },
     animations: {
       type: Object,
-      default() {
-        return {};
-      },
+      required: true,
+      validator(value) {
+        return Object.keys(value).length !== 0
+      }
     },
   },
   data() {

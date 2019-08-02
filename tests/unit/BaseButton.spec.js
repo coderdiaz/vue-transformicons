@@ -73,4 +73,22 @@ describe('BaseButton.vue', () => {
       expect(cmp.vm.currentActive).toBeTruthy();
     });
   });
+
+  describe('Watchers', () => {
+    beforeEach(() => {
+      cmp = createComponent({
+        animation: 'minus',
+        ariaLabel: 'add item',
+        active: false,
+        animations: {
+          minus: ['tcon-plus', 'tcon-plus--minus'],
+        },
+      });
+    });
+
+    it('should change the current active value when the prop value is updated', () => {
+      cmp.setData({ active: false });
+      expect(cmp.vm.active).toBeFalsy();
+    });
+  });
 });

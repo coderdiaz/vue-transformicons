@@ -1,67 +1,53 @@
-<p align="center">
-  <a style="margin-right: 20px" href="https://github.com/transformicons/transformicons">
-    <img src="example/img/transformicons-icon.svg" alt="Transformicons" width="100" />
-  </a>
-  <a href="https://github.com/coderdiaz/vue-transformicons">
-    <img src="https://vuejs.org/images/logo.png" width="120">
-  </a>
-  <h2 style="font-weight: 700" align="center">&lt;vue-transformicons /&gt;</h2>
-</p>
+# [Transformicons](https://github.com/coderdiaz/vue-transformicons) &middot; [![NPMVERSION](https://img.shields.io/npm/v/vue-transformicons.svg)](http://npmjs.com/package/vue-transformicons) [![GITHUBSTARS](https://img.shields.io/github/stars/coderdiaz/vue-transformicons.svg)](https://github.com/coderdiaz/vue-transformicons/stargazers) [![BUILD](https://travis-ci.org/coderdiaz/vue-transformicons.svg?branch=master)](https://travis-ci.org/coderdiaz/vue-transformicons) [![DOWNLOADS](https://img.shields.io/npm/dt/vue-transformicons.svg)](https://npmjs.com/package/vue-transformicons)
 
-<p align="center">
-    <a href="https://npmjs.com/package/vue-transformicons"><img src="https://img.shields.io/npm/dt/vue-transformicons.svg?style=flat-square"></a>
-    <a href="https://github.com/coderdiaz/vue-transformicons/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square"></a>
-    <a href="https://github.com/coderdiaz/vue-transformicons/stargazers"><img src="https://img.shields.io/github/stars/coderdiaz/vue-transformicons.svg?style=flat-square"></a>
-    <a href="http://npmjs.com/package/vue-transformicons"><img src="https://img.shields.io/npm/v/vue-transformicons.svg?style=flat-square"></a>
-    <a href="http://npmjs.com/package/vue-transformicons"><img src="https://img.shields.io/npm/dm/vue-transformicons.svg?style=flat-square"></a>
-    <a href="https://www.paypal.me/coderdiaz"><img src="https://img.shields.io/badge/invite-coffee-red.svg?style=flat-square"></a>
-    <a href="https://travis-ci.org/coderdiaz/vue-transformicons"><img src="https://travis-ci.org/coderdiaz/vue-transformicons.svg?branch=master&style=flat-square"></a>
-</a>
 
----
-
-## Introduction
 [Transformicons](http://transformicons.com) for Vue.
 
-## Installation
-
+## Install/Usage
+<!-- Replace the docs for usage the plugin -->
 ```sh
 # Using npm
 $ npm i -S vue-transformicons
 
-# Using yarn
+# or yarn
 $ yarn add vue-transformicons
 ```
 
-## Usage
-### Local registration
 ```html
-<template>
-  <div id="#app">
-    <menu-icon></menu-icon>
-  </div>
-</template>
-<script>
+<div id="#app">
+  <menu-icon></menu-icon>
+</div>
+```
+
+You can use **Local Registration**:
+```js
 import { MenuIcon } from 'vue-transformicons'
 export default {
   components: {
     MenuIcon
   }
 }
-</script>
 ```
 
-### Global registration
+or **Global Registration**:
 ```js
 import VueTransformicons from 'vue-transformicons';
 Vue.use(Transformicons);
+
+// or with a custom component name
+import { Datasource } from 'vue-datasource';
+Vue.component('custom-name', Datasource);
 ```
 
-### Browser
-In browser you can use Unpkg:
-```
-https://unpkg.com/vue-transformicons@latest/dist/vue-transformicons.min.css
-https://unpkg.com/vue-transformicons@latest/dist/vue-transformicons.min.js
+### Usage in browser
+<!-- Write an example for use the plugin in browser from CDN -->
+In browser you can use Unpkg, Jsdelivr, CDN.js, etc.
+```sh
+# Unpkg
+https://unpkg.com/vue-datasource@latest/dist/vue-datasource.js
+
+# JSDelivr
+https://cdn.jsdelivr.net/npm/vue-datasource@latest/dist/vue-datasource.min.js
 ```
 
 ## Transformicons Components
@@ -227,11 +213,8 @@ Provides with a Loader icon.
 <loader-icon></loader-icon>
 ```
 
-
-## Contributions
-All contributions are welcome send your PR and Issues.
+## Community
+All feedback and suggestions are welcome!
 
 ## License
-This is a open-source software licensed under the [MIT license](https://raw.githubusercontent.com/coderdiaz/vue-tiny-pagination/master/LICENSE)
-
-### Crafted by Javier Diaz
+This is a open-source software licensed under the [MIT license](https://raw.githubusercontent.com/coderdiaz/vue-transformicons/master/LICENSE)

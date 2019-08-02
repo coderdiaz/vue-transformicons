@@ -1,4 +1,5 @@
-export const BaseButton = {
+<script>
+export default {
   name: 'BaseButton',
   props: {
     animation: {
@@ -15,7 +16,10 @@ export const BaseButton = {
     },
     animations: {
       type: Object,
-      default: {},
+      required: true,
+      validator(value) {
+        return Object.keys(value).length !== 0
+      }
     },
   },
   data() {
@@ -58,16 +62,5 @@ export const BaseButton = {
     },
   },
 };
-
-export const IconMixin = {
-  props: {
-    animation: {
-      type: String,
-      default: '',
-    },
-    active: {
-      type: Boolean,
-      default: false,
-    },
-  },
-};
+</script>
+<style src="../transformicons.css">

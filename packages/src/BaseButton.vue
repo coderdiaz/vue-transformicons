@@ -18,8 +18,8 @@ export default {
       type: Object,
       required: true,
       validator(value) {
-        return Object.keys(value).length !== 0
-      }
+        return Object.keys(value).length !== 0;
+      },
     },
   },
   data() {

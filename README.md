@@ -35,8 +35,14 @@ import VueTransformicons from 'vue-transformicons';
 Vue.use(Transformicons);
 
 // or with a custom component name
-import { Datasource } from 'vue-datasource';
-Vue.component('custom-name', Datasource);
+import { MenuIcon } from 'vue-transformicons';
+Vue.component('custom-name', MenuIcon);
+```
+
+### Usage in SSR
+For use this package with Nuxt or another SSR server, is necessary to use the `SSR` build.
+```js
+import { MenuIcon } from 'vue-transformicons/dist/vue-transformicons.ssr';
 ```
 
 ### Usage in browser
@@ -44,10 +50,10 @@ Vue.component('custom-name', Datasource);
 In browser you can use Unpkg, Jsdelivr, CDN.js, etc.
 ```sh
 # Unpkg
-https://unpkg.com/vue-datasource@latest/dist/vue-datasource.js
+https://unpkg.com/vue-transformicons@latest/dist/vue-transformicons.js
 
 # JSDelivr
-https://cdn.jsdelivr.net/npm/vue-datasource@latest/dist/vue-datasource.min.js
+https://cdn.jsdelivr.net/npm/vue-transformicons@latest/dist/vue-transformicons.min.js
 ```
 
 ## Transformicons Components
